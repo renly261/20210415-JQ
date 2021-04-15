@@ -6,6 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .red {
+      color: red;
+    }
+    .big {
+      font-size: 50px;
+    }
+  </style>
 </head>
 
 <body>
@@ -17,6 +25,7 @@
   <h1></h1>
   <img src="./0403.jpg" id="myimg">
   <input type="text" value="" id="text">
+  <p id="myp">123456</p>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <script src="./jquery-3.6.0.min.js"></script>
   <script>
@@ -48,6 +57,11 @@
     $('h1').css('border', '5px solid black')
     $('h1').css({ color: 'blue', backgroundColor: 'gray'})
     console.log($('h1').css('border'));
+    
+    // .addClass 新增 class，多個以空白分隔
+    // .removeClass 刪除 class，多個以空白分隔
+    $('#myp').addClass('red big')
+    $('#myp').removeClass('big')
   </script>
 </body>
 
