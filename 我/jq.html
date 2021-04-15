@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .red {
+        color: red;
+    }
+
+    .big {
+        font-size: 50px;
+    }
+</style>
+
+<body>
+    <!-- 引用本機 jQuery 一個網頁只能用一個 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- 引用CDN jQuery 可以加快在不同國家的載入速度 缺點是網路掛了就不能用 一個網頁只能用一個 -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <h1>文字1</h1>
+
+    <h1>文字2</h1>
+
+    <h1>
+        <a href="https://fb.com">Facebook</a>
+    </h1>
+
+    <h1></h1>
+
+    <img src="./0403.jpg" alt="" id="myimg">
+
+    <input type="text" value="" id="text">
+
+    <p id="myp">123456</p>
+
+    <ul id="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>
+            3
+            <a href="https://fb.com">Facebook</a>
+        </li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <ul id="ul2">
+        <li>1</li>
+        <li>2</li>
+        <li>
+            3
+            <a href="https://fb.com" id="ul2link">Fb</a>
+        </li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <p id="p1">sdfdsgs</p>
+
+    <p id="p2">fhdfjgfkgjlhk</p>
+
+    <script>
+        // jQuery 語法開頭是 $
+        // $(CSS 選擇器) 會把所有該 CSS 的元素弄成陣列串成一串
+        // .eq(取第幾個(陣列 eq(0 1 2...))
+        // .text() 文字,()裡沒東西是取值 有東西是改值
+        const h1text = $('h1').text()
+        // console.log(h1text);
+        // const h1text = $('h1').eq(0).text()
+        // console.log(h1text);
+
+        // 抓到 所有 h1 標籤的第二個並修改成ABC
+        $('h1').eq(1).text('ABC')
+        console.log(h1text);
+
+        // .html() HTML() ,()裡沒東西是取值 有東西是改值
+        const h1html = $('h1').eq(2).html().trim()
+        console.log(h1html)
+
+        // 在 h1標籤 裡的第四個插入一個 a 標籤
+        $('h1').eq(3).html(`<a href="https://google.com">Google</a>`)
+
+        // .attr(屬性,值),沒給值是取值 有給值是改值 屬性一定要給
+        console.log($('#myimg').attr('src'))
+
+        // 抓到 id 叫 myimg 的並修改 myimg 的 屬性 title 為ABCD
+        $('#myimg').attr('title', 'ABCD')
+
+        // .val() 輸入欄位(input)的值(value) 沒東西是取值，有東西是改值 (value)
+        $('#text').val('aaa')
+        $('#text').val()
+        console.log($('#text').val())
+
+        // .css(樣式, 值) 沒給值是取值，有給值是改值
+        $('h1').css('border', '5px solid black')
+
+        // 一次改多個樣式可傳入 .css({樣式:值 , 樣式:值...}) 也就是JSON
+        $('h1').css({ color: 'blue', backgroundColor: 'gray' })
+        console.log($('h1').css('border'));
+
+        // .addClass 新增 class，多個以空白分隔
+        $('#myp').addClass('red big')
+
+        // .removeClass 刪除 class，多個以空白分隔
+        $('#myp').removeClass('big')
+
+        // .find(選擇器) 在裡面尋找符合的東西
+        $('#ul1').find('a').text('FB')
+
+        const midli = $('#ul1 li').eq(2)
+        // .prev() 同一層的上一個，() 裡面可以放選擇器篩選
+        midli.prev().css('color', 'red')
+
+        // .prevAll() 同一層上面的所有，() 裡面可以放選擇器篩選
+        midli.prevAll().css('background', 'gray')
+
+        // .next() 同一層的下一個，() 裡面可以放選擇器篩選
+        midli.next().css('color', 'red')
+
+        // .nextAll() 同一層的下面所有，() 裡面可以放選擇器篩選
+        midli.nextAll().css('background', 'gray')
+
+        // .siblings() 同一層除自己外的其他所有，() 裡面可以放選擇器篩選
+        midli.siblings().css('border', '5px solid black')
+
+        const ul2link = $('#ul2link')
+        // .parent() 上一層
+        ul2link.parent().css('border', '3px solid black')
+
+        // .parents() 上面所有的層 會往上找到最上面的html，不包含目前的，() 裡面可以放選擇器篩選
+        ul2link.parents().css('background', 'orange')
+
+        // .closest() 最近的層(往上找)，包含自己目前的層，() 裡面一定要放選擇器篩選
+        // 往上層找(包含自己的層)離 ul2link 最近的 li
+        ul2link.closest('li').css('color', 'blue')
+
+        // 在指定的東西裡面(下一層)的結尾放東西
+        $('#ul2').append('<li>後面</li>')
+
+        // 在指定的東西裡面(下一層)的開頭放東西
+        $('#ul2').prepend('<li>前面</li>')
+
+        // 在指定的東西前面放東西
+        $('<p>前面</p>').insertBefore('#ul2')
+
+        // 在指定的東西後面放東西
+        $('<p>後面</p>').insertAfter('#ul2')
+
+        // .empty() 清空內容 p標籤還在
+        $('#p1').empty()
+
+        // .remove() 刪除元素 整個 p2 內容及標籤全部刪除
+        $('#p2').remove()
+
+    </script>
+</body>
+
+</html>

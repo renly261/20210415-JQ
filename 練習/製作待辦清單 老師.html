@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="text">
+    <input type="button" value="新增" id="add">
+    <ul id="list">
+    </ul>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script>
+        $('#add').click(function () {
+            // 會一直加入 id 為 del 的按鈕 但一個網頁只能有一個一樣的 id 所以要用 class
+            // 抓到id為list的元素 在該元素下一層的結尾插入<li>文字輸入欄位輸入的值</li>和 class為del的按鈕
+            $('#list').append(`<li>${$('#text').val()} <input type="button" value="x" class="del"></li>`)
+
+            // 按完輸入後清空文字輸入欄位的值
+            $('#text').val('')
+        })
+        // 點擊事件要放在外面 否則點一會變點兩次
+        $('#list').on('click', '.del', function (event) {
+            // $(this)抓到目前的元素
+            $(this).parent().remove()
+        })
+    </script>
+</body>
+
+</html>
