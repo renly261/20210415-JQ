@@ -11,6 +11,11 @@
 <body>
   <h1>文字1</h1>
   <h1>文字2</h1>
+  <h1>
+    <a href="https://fb.com">Facebook</a>
+  </h1>
+  <h1></h1>
+  <img src="./0403.jpg" id="myimg">
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <script src="./jquery-3.6.0.min.js"></script>
   <script>
@@ -20,6 +25,11 @@
     const h1text = $('h1').eq(0).text()
     console.log(h1text)
     $('h1').eq(1).text('ABC')
+    
+    // .html() HTML，() 沒東西是取值，有東西是改值
+    const h1html = $('h1').eq(2).html().trim()
+    console.log(h1html)
+    $('h1').eq(3).html(`<a href="https://google.com">Google</a>`)
   </script>
 </body>
 
