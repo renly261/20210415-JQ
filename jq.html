@@ -26,6 +26,16 @@
   <img src="./0403.jpg" id="myimg">
   <input type="text" value="" id="text">
   <p id="myp">123456</p>
+  <ul id="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>
+      3
+      <a href="https://fb.com">Facebook</a>
+    </li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <script src="./jquery-3.6.0.min.js"></script>
   <script>
@@ -62,6 +72,10 @@
     // .removeClass 刪除 class，多個以空白分隔
     $('#myp').addClass('red big')
     $('#myp').removeClass('big')
+    
+    // .find(選擇器)
+    // 在裡面尋找符合的東西
+    $('#ul1').find('a').text('FB')
   </script>
 </body>
 
