@@ -36,6 +36,16 @@
     <li>4</li>
     <li>5</li>
   </ul>
+  <ul id="ul2">
+    <li>1</li>
+    <li>2</li>
+    <li>
+      3
+      <a href="https://fb.com" id="ul2link">Facebook</a>
+    </li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <script src="./jquery-3.6.0.min.js"></script>
   <script>
@@ -88,6 +98,14 @@
     midli.next().css('color', 'red')
     midli.nextAll().css('background', 'gray')
     midli.siblings().css('border', '5px solid black')
+    
+    // .parent() 上一層
+    // .parents() 上面所有的，不包含目前的，() 裡面可以放選擇器篩選
+    // .closest() 最近的，包含目前的，() 裡面一定放選擇器篩選
+    const ul2link = $('#ul2link')
+    ul2link.parent().css('border', '5px solid black')
+    ul2link.parents().css('background', 'orange')
+    ul2link.closest('li').css('color', 'blue')
   </script>
 </body>
 
