@@ -30,6 +30,11 @@
     const h1html = $('h1').eq(2).html().trim()
     console.log(h1html)
     $('h1').eq(3).html(`<a href="https://google.com">Google</a>`)
+
+    // .attr(屬性, 值)
+    // 沒給值是取值，有給值是改值
+    console.log( $('#myimg').attr('src') )
+    $('#myimg').attr('title', 'ABCD')
   </script>
 </body>
 
