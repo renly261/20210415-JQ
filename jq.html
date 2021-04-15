@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
+  <h1>文字1</h1>
+  <h1>文字2</h1>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <script src="./jquery-3.6.0.min.js"></script>
+  <script>
+    // $(CSS 選擇器)
+    // .eq 取第幾個
+    // .text() 文字，() 沒東西是取值，有東西是改值
+    const h1text = $('h1').eq(0).text()
+    console.log(h1text)
+    $('h1').eq(1).text('ABC')
+  </script>
 </body>
+
 </html>
