@@ -10,10 +10,16 @@
   <input type="button" value="點我" id="btn1">
   <script src="./jquery-3.6.0.min.js"></script>
   <script>
-    $('#btn1').click(function(event) {
-      // $(this) 代表觸發事件的東西
-      $(this).val(new Date().toLocaleString())
-      console.log(event)
+    // $(document).ready(function(){})
+    // 載入完 HTML 後再跑 JQ 程式碼
+    // 也可以簡寫為
+    // $(function(){})
+    $(document).ready(function() {
+      $('#btn1').click(function(event) {
+        // $(this) 代表觸發事件的東西
+        $(this).val(new Date().toLocaleString())
+        console.log(event)
+      })
     })
   </script>
 </body>
