@@ -16,6 +16,7 @@
   </h1>
   <h1></h1>
   <img src="./0403.jpg" id="myimg">
+  <input type="text" value="" id="text">
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <script src="./jquery-3.6.0.min.js"></script>
   <script>
@@ -35,6 +36,11 @@
     // 沒給值是取值，有給值是改值
     console.log( $('#myimg').attr('src') )
     $('#myimg').attr('title', 'ABCD')
+    
+    // .val() 輸入欄位的值
+    // 沒東西是取值，有東西是改值
+    $('#text').val('aaa')
+    console.log( $('#text').val() )
   </script>
 </body>
 
