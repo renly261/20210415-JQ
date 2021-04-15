@@ -76,6 +76,18 @@
     // .find(選擇器)
     // 在裡面尋找符合的東西
     $('#ul1').find('a').text('FB')
+    
+    // .prev() 同一層的上一個，() 裡面可以放選擇器篩選
+    // .prevAll() 同一層的上面所有，() 裡面可以放選擇器篩選
+    // .next() 同一層的下一個，() 裡面可以放選擇器篩選
+    // .nextAll() 同一層的下面所有，() 裡面可以放選擇器篩選
+    // .siblings() 同一層的其他，() 裡面可以放選擇器篩選
+    const midli = $('#ul1 li').eq(2)
+    midli.prev().css('color', 'red')
+    midli.prevAll().css('background', 'gray')
+    midli.next().css('color', 'red')
+    midli.nextAll().css('background', 'gray')
+    midli.siblings().css('border', '5px solid black')
   </script>
 </body>
 
