@@ -8,6 +8,10 @@
 </head>
 <body>
   <input type="button" value="點我" id="btn1">
+  <hr>
+  <input type="button" value="產生新按鈕" id="btn2">
+  <div id="btns">
+  </div>
   <script src="./jquery-3.6.0.min.js"></script>
   <script>
     // $(document).ready(function(){})
@@ -19,6 +23,20 @@
         // $(this) 代表觸發事件的東西
         $(this).val(new Date().toLocaleString())
         console.log(event)
+      })
+
+      $('#btn2').click(function() {
+        $('#btns').append('<input type="button" value="按鈕" class="btn-new">')
+      })
+
+      // 沒有效，因為 .btn-new 後面才出現
+      $('.btn-new').click(function() {
+        console.log('a')
+      })
+
+      // 當點 #btns 時，且點到的是 .btn-new
+      $('#btns').on('click', '.btn-new', function() {
+        console.log('b')
       })
     })
   </script>
