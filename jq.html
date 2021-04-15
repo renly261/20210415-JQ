@@ -47,6 +47,8 @@
     <li>4</li>
     <li>5</li>
   </ul>
+  <p id="p1">sdfdsgs</p>
+  <p id="p2">fhdfjgfkgjlhk</p>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <script src="./jquery-3.6.0.min.js"></script>
   <script>
@@ -116,6 +118,11 @@
     $('<p>前面</p>').insertBefore('#ul2')
     // 在指定的東西後面放東西
     $('<p>後面</p>').insertAfter('#ul2')
+    
+    // .empty() 清空內容
+    $('#p1').empty()
+    // .remove() 刪除元素
+    $('#p2').remove()
   </script>
 </body>
 
